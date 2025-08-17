@@ -1,0 +1,52 @@
+PROGRAM NAME,MAJOR,ENROLLMENT,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13,Unnamed: 14,Unnamed: 15,Unnamed: 16,Unnamed: 17,Unnamed: 18,Unnamed: 19,Unnamed: 20,Unnamed: 21,Unnamed: 22
+,,FIST YEAR,,,SECOND YEAR,,,THIRD YEAR,,,FOURTH YEAR,,,FIFTH YEAR,,,SIXTH YEAR,,,TOTAL YEAR,,
+,,Male,Female,Total,Male,Female,Total,Male,Female,Total,Male,Female,Total,Male,Female,Total,Male,Female,Total,Male,Female,Total
+BS ELECTRICAL ENGINEERING,,77,23,100,5,3,8,15,3,18,27,14,41,42,9,51,0,0,0,166,52,218
+BS COMPUTER ENGINEERING (DAY CLASS),,93,61,154,2,1,3,16,8,24,53,32,85,17,24,41,0,0,0,181,126,307
+BS COMPUTER ENGINEERING (NIGHT CLASS),,45,15,60,12,5,17,3,1,4,6,5,11,3,5,8,0,0,0,69,31,100
+BACHELOR OF SECONDARY EDUCATION,,,,,,,,,,,,,,,,,,,,,,
+,ENGLISH,13,77,90,1,8,9,0,13,13,6,45,51,0,0,0,0,0,0,20,143,163
+,MATHEMATICS,10,27,37,0,0,0,0,8,8,3,15,18,0,0,0,0,0,0,13,50,63
+,SCIENCE / BIOLOGICAL SCIENCES,8,18,26,1,6,7,0,0,0,4,8,12,0,0,0,0,0,0,13,32,45
+,,31,122,153,2,14,16,0,21,21,13,68,81,0,0,0,0,0,0,46,225,271
+BS COMPUTER SCIENCE,,124,77,201,0,1,1,0,0,0,30,20,50,0,0,0,0,0,0,154,98,252
+BS INFORMATION TECHNOLOGY,,128,79,207,29,25,54,32,38,70,75,70,145,0,0,0,0,0,0,264,212,476
+BS BUSINESS MANAGEMENT,MARKETING MANAGEMENT,88,314,402,18,59,77,13,60,73,46,191,237,0,0,0,0,0,0,165,624,789
+BS BUSINESS ADMINISTRATION,MARKETING MANAGEMENT,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BS HOSPITALITY MANAGEMENT,,73,109,182,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,73,110,183
+BS INDUSTRIAL TECHNOLOGY,,,,,,,,,,,,,,,,,,,,,,
+,AUTOMOTIVE TECHNOLOGY,44,0,44,6,0,6,16,0,16,29,1,30,0,0,0,0,0,0,95,1,96
+,DRAFTING TECHNOLOGY,19,18,37,9,7,16,7,7,14,5,10,15,0,0,0,0,0,0,40,42,82
+,ELECTRICAL TECHNOLOGY,56,7,63,6,0,6,16,1,17,34,1,35,0,0,0,0,0,0,112,9,121
+,ELECTRONICS TECHNOLOGY,27,11,38,5,2,7,7,6,13,10,5,15,0,0,0,0,0,0,49,24,73
+,FASHION APPAREL TECHNOLOGY,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+,HVAC-R TECHNOLOGY,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+,MECHANICAL TECHNOLOGY,38,1,39,5,0,5,10,1,11,12,0,12,0,0,0,0,0,0,65,2,67
+,STATIONARY MARINE TECHNOLOGY,41,4,45,6,0,6,11,2,13,37,7,44,0,0,0,0,0,0,95,13,108
+,WELDING & FABRICATION TECHNOLOGY,27,7,34,0,0,0,3,1,4,10,3,13,0,0,0,0,0,0,40,11,51
+,,252,48,300,37,9,46,70,18,88,137,27,164,0,0,0,0,0,0,496,102,598
+BACHELOR OF TECHNICAL VOCATIONAL TEACHER EDUCATION,,,,,,,,,,,,,,,,,,,,,,
+,-,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+,AUTOMOTIVE TECHNOLOGY,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+,ELECTRICAL TECHNOLOGY,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1
+,ELECTRONICS TECHNOLOGY,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+,"GARMENTS, FASHION & DESIGN",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+,HOTEL & RESTAURANT SERVICES,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+,FOOD & SERVICE MANAGEMENT,10,27,37,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,10,28,38
+,MECHANICAL TECHNOLOGY,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+,WELDING & FABRICATION TECHNOLOGY,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+,,11,27,38,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,11,28,39
+TOTAL,,922,875,1797,120,150,270,158,178,336,411,476,887,62,38,100,0,0,0,1673,1717,3390
+TEACHER CERTIFICATE PROGRAM,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GRAND TOTAL,,922,875,1797,120,150,270,158,178,336,411,476,887,62,38,100,0,0,0,1673,1717,3390
+"Prepared by:                                                                                                                                                                                                                                                                                                                                                                                             Noted:by:
+MARLYN A. QUINEZ                                                                                                                                                                                                                                           LAURO B. PASCUA, Ed.D.
+OIC, REGISTRAR'S OFFICE                                                                                                                                                                                                                                                                                                                                                         CAMPUS ADMINISTRATOR",,,,,,,,,,,,,,,,,,,,,,
+,,ENROLLMENT,,,,,,,,,,,,,,,,,,,,
+,,JUNIOR HIGH SCHOOL,,,,,,,,,,,,SENIOR HIGH SCHOOL,,,,,,,,
+,,GRADE 7,,,GRADE 8,,,GRADE 9,,,GRADE 10,,,GRADE 11,,,GRADE 12,,,TOTAL,,
+,,Male,Female,Total,Male,Female,Total,Male,Female,Total,Male,Female,Total,Male,Female,Total,Male,Female,Total,Male,Female,Total
+LABORATORY SCIENCE HIGH SCHOOL,,9,13,22,12,16,28,10,16,26,10,17,27,7,11,18,11,19,30,59,92,151
+"Prepared by:                                                                                                                                                                                                                                                                                                                                                                                             Noted:by:
+MARLYN A. QUINEZ                                                                                                                                                                                                                                           LAURO B. PASCUA, Ed.D.
+OIC, REGISTRAR'S OFFICE                                                                                                                                                                                                                                                                                                                                                         CAMPUS ADMINISTRATOR",,,,,,,,,,,,,,,,,,,,,,
