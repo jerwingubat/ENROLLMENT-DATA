@@ -9,12 +9,9 @@ from sklearn.preprocessing import LabelEncoder
 import warnings
 warnings.filterwarnings('ignore')
 
-# Set the style for the plots
 plt.style.use('default')
 sns.set_palette("husl")
 
-# Create a unified dataset from the provided information
-# First, let's process the enrollment data
 enrollment_data = {
     'AY': ['2015-2016', '2015-2016', '2015-2016', '2016-2017', '2016-2017', '2016-2017',
            '2017-2018', '2017-2018', '2017-2018', '2018-2019', '2018-2019', '2018-2019',
@@ -31,7 +28,6 @@ enrollment_data = {
 
 enrollment_df = pd.DataFrame(enrollment_data)
 
-# Process the dropout data
 dropout_data = {
     'AY': ['2015-2016', '2015-2016', '2015-2016', '2016-2017', '2016-2017', '2016-2017',
            '2017-2018', '2017-2018', '2017-2018', '2018-2019', '2018-2019', '2018-2019',
@@ -47,28 +43,23 @@ dropout_data = {
 
 dropout_df = pd.DataFrame(dropout_data)
 
-# Standardize semester names
 semester_mapping = {
     '1st': 'First',
     '2nd': 'Second',
     'Midyear': 'Midyear',
-    'Summer': 'Midyear'  # Assuming Summer is equivalent to Midyear
+    'Summer': 'Midyear'
 }
 
 enrollment_df['Semester'] = enrollment_df['Semester'].map(lambda x: semester_mapping.get(x, x))
 dropout_df['Semester'] = dropout_df['Semester'].map(lambda x: semester_mapping.get(x, x))
 
-# Merge enrollment and dropout data
 merged_df = pd.merge(enrollment_df, dropout_df, on=['AY', 'Semester'], how='outer')
 
-# Fill missing values with 0 (for cases where there might be no dropouts)
 merged_df['Dropouts'] = merged_df['Dropouts'].fillna(0)
 merged_df['Enrollees'] = merged_df['Enrollees'].fillna(0)
 
-# Calculate non-dropouts
 merged_df['Non_Dropouts'] = merged_df['Enrollees'] - merged_df['Dropouts']
 
-# Calculate dropout rate - handle division by zero
 def calculate_dropout_rate(row):
     if row['Enrollees'] > 0:
         return round(row['Dropouts'] / row['Enrollees'] * 100, 2)
@@ -76,46 +67,35 @@ def calculate_dropout_rate(row):
 
 merged_df['Dropout_Rate'] = merged_df.apply(calculate_dropout_rate, axis=1)
 
-# Extract year from AY for analysis
 merged_df['Year'] = merged_df['AY'].apply(lambda x: int(x.split('-')[0]))
 
-# Encode categorical variables for machine learning
 le_semester = LabelEncoder()
 merged_df['Semester_Encoded'] = le_semester.fit_transform(merged_df['Semester'])
 
-# Create features and target for dropout prediction
-# For this simplified example, we'll predict if dropout rate is above average
+
 average_dropout_rate = merged_df['Dropout_Rate'].mean()
 merged_df['High_Dropout'] = (merged_df['Dropout_Rate'] > average_dropout_rate).astype(int)
 
-# Features: Year, Semester_Encoded, Enrollees
-# Target: High_Dropout
 X = merged_df[['Year', 'Semester_Encoded', 'Enrollees']]
 y = merged_df['High_Dropout']
 
-# Split the data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-# Train Random Forest model
 rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
 rf_model.fit(X_train, y_train)
 
-# Make predictions
 y_pred = rf_model.predict(X_test)
 
-# Handle case where only one class is present in y_test
 if len(np.unique(y_test)) == 2:
     y_pred_proba = rf_model.predict_proba(X_test)[:, 1]
 else:
-    # Only one class present, so probability is always 0 or 1
+
     y_pred_proba = np.zeros_like(y_pred, dtype=float)
     if len(y_test) > 0:
-        y_pred_proba[y_pred == 1] = 0.99  # Set high probability for the single class
+        y_pred_proba[y_pred == 1] = 0.99
 
-# Calculate accuracy
 accuracy = accuracy_score(y_test, y_pred) if len(y_test) > 0 else 0
 
-# Handle precision, recall, f1 for cases with only one class
 try:
     precision = precision_score(y_test, y_pred, zero_division=0)
     recall = recall_score(y_test, y_pred, zero_division=0)
@@ -123,7 +103,6 @@ try:
 except:
     precision, recall, f1 = 0, 0, 0
 
-# Create the visualizations
 fig = plt.figure(figsize=(20, 20))
 
 # 1. KDE Plot
@@ -180,14 +159,14 @@ plt.ylabel('True Positive Rate')
 plt.title('ROC Curve')
 plt.legend(loc="lower right")
 
-# 6. Bar chart - Shows most influential predictors
+# 6. Bar chart (influential predictors) eto dinagdag ko maam
 plt.subplot(4, 4, 6)
 feature_importances = pd.Series(rf_model.feature_importances_, index=X.columns)
 feature_importances.sort_values(ascending=False).plot(kind='bar')
 plt.title('Feature Importance (Dropout Prediction)')
 plt.ylabel('Importance')
 
-# 7. Scatter plot - Enrollment vs Dropout Rate (simulating attendance vs grade)
+# 7. Scatter plot - Enrollment vs Dropout Rate
 plt.subplot(4, 4, 7)
 valid_data = merged_df[(merged_df['Enrollees'] > 0) & (merged_df['Dropout_Rate'].notna())]
 plt.scatter(valid_data['Enrollees'], valid_data['Dropout_Rate'], alpha=0.7)
@@ -238,7 +217,6 @@ plt.title('Dropout Distribution by Semester')
 plt.tight_layout()
 plt.show()
 
-# Print some insights
 print("Data Analysis Insights:")
 print(f"1. Average dropout rate: {merged_df['Dropout_Rate'].mean():.2f}%")
 max_dropout_idx = merged_df['Dropout_Rate'].idxmax()
@@ -248,7 +226,7 @@ print(f"4. Total dropouts: {merged_df['Dropouts'].sum():,}")
 overall_dropout_rate = (merged_df['Dropouts'].sum() / merged_df['Enrollees'].sum() * 100) if merged_df['Enrollees'].sum() > 0 else 0
 print(f"5. Overall dropout rate: {overall_dropout_rate:.2f}%")
 
-# Print model performance metrics
+# model performance metrics
 print("\nRandom Forest Classification Performance:")
 print(f"Accuracy: {accuracy:.4f}")
 print(f"Precision: {precision:.4f}")
@@ -260,7 +238,7 @@ print("\nFeature Importance (Classification):")
 for feature, importance in feature_importances.sort_values(ascending=False).items():
     print(f"{feature}: {importance:.4f}")
 
-# Print dataset statistics
+# dataset statistics
 print("\nDataset Statistics:")
 print(f"Total records: {len(merged_df)}")
 print(f"High dropout semesters: {merged_df['High_Dropout'].sum()}")
